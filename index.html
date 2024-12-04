@@ -45,4 +45,104 @@
         .theme-switcher button {
             padding: 10px 20px;
             border: none;
-            border-radius:
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        [data-theme="light"] .theme-switcher button {
+            background-color: var(--button-bg-light);
+            color: var(--button-text-light);
+        }
+
+        [data-theme="dark"] .theme-switcher button {
+            background-color: var(--button-bg-dark);
+            color: var(--button-text-dark);
+        }
+
+        .columns {
+            display: flex;
+            flex: 1;
+            height: 100%;
+        }
+
+        .column {
+            flex: 1;
+            padding: 20px;
+            box-sizing: border-box;
+            border-right: 1px solid #ddd;
+        }
+
+        .column:last-child {
+            border-right: none;
+        }
+
+        h1, h2, h3 {
+            margin: 10px 0;
+        }
+
+        p {
+            margin: 10px 0;
+        }
+
+        small {
+            color: gray;
+        }
+
+        .barlow {
+            font-family: "barlow", sans-serif;
+        }
+
+        .area {
+            font-family: "area", sans-serif;
+        }
+
+        .stoltzl {
+            font-family: "stoltzl", sans-serif;
+        }
+    </style>
+</head>
+<body data-theme="light">
+    <div class="theme-switcher">
+        <button id="theme-toggle" aria-label="Switch to dark mode">Switch to Dark Mode</button>
+    </div>
+    <div class="columns">
+        <div class="column barlow">
+            <h1>Barlow: Header 1</h1>
+            <h2>Header 2</h2>
+            <h3>Header 3</h3>
+            <p>This is a paragraph of text to compare how the Barlow font looks in body copy. It provides a clean and modern style suitable for many applications.</p>
+            <small>Barlow: This is small, subtle text for captions or notes.</small>
+        </div>
+        <div class="column area">
+            <h1>Area: Header 1</h1>
+            <h2>Header 2</h2>
+            <h3>Header 3</h3>
+            <p>This is a paragraph of text to compare how the Area font looks in body copy. It offers a professional and minimalist feel, great for clean designs.</p>
+            <small>Area: This is small, subtle text for captions or notes.</small>
+        </div>
+        <div class="column stoltzl">
+            <h1>Stoltzl: Header 1</h1>
+            <h2>Header 2</h2>
+            <h3>Header 3</h3>
+            <p>This is a paragraph of text to compare how the Stoltzl font looks in body copy. Its style is unique and geometric, perfect for standout designs.</p>
+            <small>Stoltzl: This is small, subtle text for captions or notes.</small>
+        </div>
+    </div>
+
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            body.setAttribute('data-theme', newTheme);
+
+            themeToggle.textContent = newTheme === 'light' ? 'Switch to Dark Mode' : 'Switch to Light Mode';
+            themeToggle.setAttribute('aria-label', `Switch to ${newTheme === 'light' ? 'dark' : 'light'} mode`);
+        });
+    </script>
+</body>
+</html>
