@@ -3,65 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Font Comparison: Barlow, Area, Stoltzl</title>
+    <title>Font Comparison with Dark Mode</title>
     <link rel="stylesheet" href="https://use.typekit.net/ofe7cce.css">
     <style>
+        :root {
+            --bg-color-light: #ffffff;
+            --text-color-light: #000000;
+            --bg-color-dark: #121212;
+            --text-color-dark: #f1f1f1;
+            --button-bg-light: #eeeeee;
+            --button-text-light: #000000;
+            --button-bg-dark: #333333;
+            --button-text-dark: #ffffff;
+        }
+
+        [data-theme="light"] {
+            background-color: var(--bg-color-light);
+            color: var(--text-color-light);
+        }
+
+        [data-theme="dark"] {
+            background-color: var(--bg-color-dark);
+            color: var(--text-color-dark);
+        }
+
         body {
             margin: 0;
             font-family: Arial, sans-serif;
             display: flex;
-            height: 100vh;
+            flex-direction: column;
+            min-height: 100vh;
         }
-        .column {
-            flex: 1;
-            padding: 20px;
-            box-sizing: border-box;
-            border-right: 1px solid #ddd;
+
+        .theme-switcher {
+            margin: 10px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
-        .column:last-child {
-            border-right: none;
-        }
-        h1, h2, h3 {
-            margin: 10px 0;
-        }
-        p {
-            margin: 10px 0;
-        }
-        small {
-            color: gray;
-        }
-        .barlow {
-            font-family: "barlow", sans-serif;
-        }
-        .area {
-            font-family: "area", sans-serif;
-        }
-        .stoltzl {
-            font-family: "stoltzl", sans-serif;
-        }
-    </style>
-</head>
-<body>
-    <div class="column barlow">
-        <h1>Barlow: Header 1</h1>
-        <h2>Header 2</h2>
-        <h3>Header 3</h3>
-        <p>This is a paragraph of text to compare how the Barlow font looks in body copy. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <small>Barlow: This is small, subtle text for captions or notes.</small>
-    </div>
-    <div class="column area">
-        <h1>Area: Header 1</h1>
-        <h2>Header 2</h2>
-        <h3>Header 3</h3>
-        <p>This is a paragraph of text to compare how the Area font looks in body copy. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <small>Area: This is small, subtle text for captions or notes.</small>
-    </div>
-    <div class="column stoltzl">
-        <h1>Stoltzl: Header 1</h1>
-        <h2>Header 2</h2>
-        <h3>Header 3</h3>
-        <p>This is a paragraph of text to compare how the Stoltzl font looks in body copy. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <small>Stoltzl: This is small, subtle text for captions or notes.</small>
-    </div>
-</body>
-</html>
+
+        .theme-switcher button {
+            padding: 10px 20px;
+            border: none;
+            border-radius:
