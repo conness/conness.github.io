@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font Comparison: Barlow, Area, Stoltzl</title>
+    <link rel="stylesheet" href="https://use.typekit.net/ofe7cce.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            height: 100vh;
+        }
+        .column {
+            flex: 1;
+            padding: 20px;
+            box-sizing: border-box;
+            border-right: 1px solid #ddd;
+        }
+        .column:last-child {
+            border-right: none;
+        }
+        h1, h2, h3 {
+            margin: 10px 0;
+        }
+        p {
+            margin: 10px 0;
+        }
+        small {
+            color: gray;
+        }
+        .barlow {
+            font-family: "barlow", sans-serif;
+        }
+        .area {
+            font-family: "area", sans-serif;
+        }
+        .stoltzl {
+            font-family: "stoltzl", sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="column barlow">
+        <h1>Barlow: Header 1</h1>
+        <h2>Header 2</h2>
+        <h3>Header 3</h3>
+        <p>This is a paragraph of text to compare how the Barlow font looks in body copy. It provides a clean and modern style suitable for many applications.</p>
+        <small>Barlow: This is small, subtle text for captions or notes.</small>
+    </div>
+    <div class="column area">
+        <h1>Area: Header 1</h1>
+        <h2>Header 2</h2>
+        <h3>Header 3</h3>
+        <p>This is a paragraph of text to compare how the Area font looks in body copy. It offers a professional and minimalist feel, great for clean designs.</p>
+        <small>Area: This is small, subtle text for captions or notes.</small>
+    </div>
+    <div class="column stoltzl">
+        <h1>Stoltzl: Header 1</h1>
+        <h2>Header 2</h2>
+        <h3>Header 3</h3>
+        <p>This is a paragraph of text to compare how the Stoltzl font looks in body copy. Its style is unique and geometric, perfect for standout designs.</p>
+        <small>Stoltzl: This is small, subtle text for captions or notes.</small>
+    </div>
+</body>
+</html>
